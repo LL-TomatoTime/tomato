@@ -7,16 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>TomatoTime</h1>
-    </header>
+        
     <main>
-        <div id="time">25:00</div> <br>
+        <div class="header">
+            <h1>TomatoTime</h1>
+            <p>techniques for efficient studies</p>
+        </div>
 
-        <button type="button" onclick="Start()">Start</button> <br> <br>
-        <button type="button" onclick="Pause()">Pause</button> <br> <br>
-        <button type="button" onclick="Reset()">Reset</button> 
-
+        <div class="container">
+            <div class="modes"> <!--to change and see what kind of mode the user is in // Need some changes and later I'll explain to you the idea -->
+                <button class="mode-btn">Focus</button>
+                <button class="mode-btn">Break</button>
+            </div>
+            <div class="timer-display">25:00</div> <!--Just the timer-->
+            <div class="controls"> <!--We need to see what kind of JS we will use, if we will to continue with "onclick" or if we will use another type of method-->
+                <button type="button" onclick="Start()">Start</button>
+                <button type="button" onclick="Pause()">Pause</button>
+                <button type="button" onclick="Reset()">Reset</button>
+            </div>
+            <div class="settings"> <!--I had the idea that the user could choose how much time he wants to study, keeping the idea of Pomodoro method-->
+                <div class="choose-time">
+                    <label for="focusTime">Focus (min)</label>
+                    <input type="number" id="focusTime" min="1" max="60" value="25">
+                </div>
+                <div class="choose-time">
+                    <label for="breakTime">Break (min)</label>
+                    <input type="number" id="breakTime" min="1" max="30" value="5">
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
