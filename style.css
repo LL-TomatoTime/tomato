@@ -4,9 +4,9 @@
     --primary-red: #d95550;
     --dark-red: #c0392b;
     --light-bg: rgba(255, 255, 255, 0.1);
-    --text-color: #ffffff
+    --text-color: #ffffffcc;
     --text-color-light: #f1f1f1;
-    --white-translucent: rgba(255, 255, 255, 0.8);
+    --white-translucent: #ffffffcc;
 }
 
 *{
@@ -34,6 +34,7 @@ main{
 
 .header h1 {
     font-weight: 700;
+    color: rgb(77, 0, 0);
 }
 
 .header > p{
@@ -43,7 +44,7 @@ main{
 
 .container{
     width: 100%;
-    max-width: 450px;
+    max-width: 650px;
     text-align: center;
     background: var(--light-bg);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -76,7 +77,7 @@ main{
 }
 
 .timer-display{
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 700;
     margin: 30px 0;
 }
