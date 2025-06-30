@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+:root{
+    --primary-red: #d95550;
+    --dark-red: #c0392b;
+    --light-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff
+    --text-color-light: #f1f1f1;
+    --white-translucent: rgba(255, 255, 255, 0.8);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,8 +17,8 @@
 }
 
 main{
-    background-color: #be4c4c;
-    color: white;
+    background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+    color: var(--text-color);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -23,35 +32,47 @@ main{
     text-align: center;
 }
 
+.header h1 {
+    font-weight: 700;
+}
+
 .header > p{
-    color: lightgray;
+    color: var(--white-translucent);
+    font-weight: 400;
 }
 
 .container{
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     text-align: center;
-    background: #db9393;
-    box-shadow: 5px 15px 25px red ;
+    background: var(--light-bg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 40px;
+    backdrop-filter: blur(10px);
 }
 
 .modes{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 5px;
 }
 
 .mode-btn{
-    padding: 8px 0;
-    background: none;
+    padding: 8px 24px;
+    background: transparent;
     border: none;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    color: rgb(241, 241, 241);
+    color: var(--text-color-light);
+    transition: all 0.2s ease;
+    border-radius: 100px;
 }
 
 .timer-display{
@@ -62,23 +83,51 @@ main{
 
 .controls{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 15px;
     margin-bottom: 30px;
 }
 
-button{
+.controls button{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls button:first-child {
+    background-color: var(--text-color);
+    color: var(--dark-red);
+}
+
+.controls button:not(:first-child) {
+    background: none;
+    color: var(--text-color-light);
+}
+
+.controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* button{
     padding: 10px;
     width: 100%;
     max-width: 200px;
     margin: auto;
-}
+} */
 
 .settings{
     display: flex;
     justify-content: center;
     gap: 50px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .choose-time{
@@ -90,13 +139,50 @@ button{
 label{
     font-size: 15px;
     margin-bottom: 6px;
+    font-weight: 600;
 }
 
 input{
     width: 100%;
-    max-width: 70px;
+    max-width: 80px;
     text-align: center;
-    padding: 7px;
+    padding: 8px;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+input:focus {
+    outline: none;
+    border-color: var(--white-translucent);
+    background-color: rgba(0, 0, 0, 0,2);
+}
+.timer-display {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px; 
+}
+
+
+#full_tomato, #bitten_tomato {
+    position: absolute; 
+    width: 130px; 
+    height: auto;
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+}
+
+#time-display {
+    position: relative;
+    z-index: 10;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
 }

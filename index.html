@@ -19,7 +19,12 @@
                 <button class="mode-btn">Focus</button>
                 <button class="mode-btn">Break</button>
             </div>
-            <div class="timer-display">25:00</div> <!--Just the timer-->
+            <div class="timer-display"> <!-- the timer has been turned into a span -->
+                <img id="full_tomato" src="assets/full_tomato.png" alt="the tomato">
+                <img id="bitten_tomato" src="assets/bitten_tomato.png" alt="tomato with bitten" class="hidden">
+
+                <span id="time-display">25:00</span>
+            </div>
             <div class="controls"> <!--We need to see what kind of JS we will use, if we will to continue with "onclick" or if we will use another type of method-->
                 <button type="button" onclick="Start()">Start</button>
                 <button type="button" onclick="Pause()">Pause</button>
