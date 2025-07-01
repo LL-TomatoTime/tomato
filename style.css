@@ -4,7 +4,7 @@
     --primary-red: #d95550;
     --dark-red: #c0392b;
     --light-bg: rgba(255, 255, 255, 0.1);
-    --text-color: #ffffff
+    --text-color: #ffffff;
     --text-color-light: #f1f1f1;
     --white-translucent: rgba(255, 255, 255, 0.8);
 }
@@ -73,12 +73,6 @@ main{
     color: var(--text-color-light);
     transition: all 0.2s ease;
     border-radius: 100px;
-}
-
-.timer-display{
-    font-size: 80px;
-    font-weight: 700;
-    margin: 30px 0;
 }
 
 .controls{
@@ -158,9 +152,12 @@ input{
 input:focus {
     outline: none;
     border-color: var(--white-translucent);
-    background-color: rgba(0, 0, 0, 0,2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .timer-display {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 30px 0;
     position: relative; 
     display: flex;
     align-items: center;
@@ -185,4 +182,27 @@ input:focus {
 .hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+    .mode-btn{
+        padding: 8px 24px;
+        font-size: 16px;
+    }
+    .timer-display {
+        font-size: 80px;
+    }
+    .controls {
+        flex-direction: row;
+    }
+    .controls button {
+        width: auto;
+    }
+    .settings {
+        flex-direction: row;
+        gap: 50px;
+    }
 }
