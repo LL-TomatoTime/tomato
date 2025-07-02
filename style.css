@@ -16,8 +16,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+    background: black;
+    transition: .8s;
+}
+
 main{
-    background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+    /* background: linear-gradient(135deg, var(--dark-red), var(--primary-red)); */
     color: var(--text-color);
     display: flex;
     min-height: 100vh;
@@ -25,6 +30,7 @@ main{
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: .8s;
 }
 
 .header{
@@ -54,7 +60,67 @@ main{
     backdrop-filter: blur(10px);
 }
 
-.modes{
+.dark-mode {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.trophy {
+    text-align: right;
+}
+
+.rail { 
+    width: 60px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 150px;
+    position: relative;
+    cursor: pointer;
+}
+
+.rail .indicator {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    transform: scale(.8);
+    position: absolute;
+    left: 0;
+    transition: .8s;
+}
+
+.rail.dark {
+    background-color: #000000;
+}
+
+.rail.dark .indicator {
+    left: 30px;
+    background-color: #ffff;
+}
+
+body.dark {
+    background: #ffffff;
+}
+
+body.dark .time-display {
+    color: black;
+}
+
+body.dark p {
+    color: black;
+}
+
+body.dark label {
+    color: black;
+}
+
+body.dark .controls button:first-child  {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.modes {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -64,7 +130,7 @@ main{
     padding: 5px;
 }
 
-.mode-btn{
+.mode-btn {
     padding: 8px 24px;
     background: transparent;
     border: none;
@@ -90,7 +156,7 @@ main{
 }
 
 .controls button{
-    padding: 12px 24px;
+    padding: 12px 48px;
     border: none;
     border-radius: 8px;
     font-size: 18px;
@@ -106,7 +172,7 @@ main{
 }
 
 .controls button:not(:first-child) {
-    background: none;
+    background: red;
     color: var(--text-color-light);
 }
 
@@ -178,9 +244,10 @@ input:focus {
     transition: opacity 0.5s ease;
 }
 
-#time-display {
+.time-display {
     position: relative;
     z-index: 10;
+    font-size: 100px;
 }
 
 .hidden {
