@@ -15,6 +15,15 @@
         </div>
 
         <div class="container">
+            
+            <div class="dark-mode">
+                <div class="trophy">
+                    <span style="font-size: 30px;">&#127942;</span>
+                </div>
+                <div class="rail" id="rail">
+                    <div class="indicator"></div>
+                </div>
+            </div>
             <div class="modes"> <!--to change and see what kind of mode the user is in // Need some changes and later I'll explain to you the idea -->
                 <button class="mode-btn">Focus</button>
                 <button class="mode-btn">Break</button>
@@ -23,7 +32,7 @@
                 <img id="full_tomato" src="assets/full_tomato.png" alt="the tomato">
                 <img id="bitten_tomato" src="assets/bitten_tomato.png" alt="tomato with bitten" class="hidden">
 
-                <span id="time-display">25:00</span>
+                <div class="time-display">25:00</div>
             </div>
             <div class="controls"> <!--We need to see what kind of JS we will use, if we will to continue with "onclick" or if we will use another type of method-->
                 <button type="button" onclick="Start()">Start</button>
@@ -42,5 +51,7 @@
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
