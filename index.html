@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TomatoTime</title>
+    <link rel="shortcut icon" href="/assets/favicon_tomato.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,12 +33,12 @@
                 <img id="full_tomato" src="assets/full_tomato.png" alt="the tomato">
                 <img id="bitten_tomato" src="assets/bitten_tomato.png" alt="tomato with bitten" class="hidden">
 
-                <div class="time-display">25:00</div>
+                <div class="time-display" id="timer">25:00</div>
             </div>
             <div class="controls"> <!--We need to see what kind of JS we will use, if we will to continue with "onclick" or if we will use another type of method-->
-                <button type="button" onclick="Start()">Start</button>
-                <button type="button" onclick="Pause()">Pause</button>
-                <button type="button" onclick="Reset()">Reset</button>
+                <button type="button" id="start">Start</button>
+                <button type="button" id="pause">Pause</button>
+                <button type="button" id="reset">Reset</button>
             </div>
             <div class="settings"> <!--I had the idea that the user could choose how much time he wants to study, keeping the idea of Pomodoro method-->
                 <div class="choose-time">
