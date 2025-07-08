@@ -40,16 +40,18 @@
                 <button type="button" id="pause">Pause</button>
                 <button type="button" id="reset">Reset</button>
             </div>
-            <div class="settings"> <!--I had the idea that the user could choose how much time he wants to study, keeping the idea of Pomodoro method-->
-                <div class="choose-time">
-                    <label for="focusTime">Focus (min)</label>
-                    <input type="number" id="focusTime" min="1" max="60" value="25">
+            <form>
+                <div class="settings"> <!--I had the idea that the user could choose how much time he wants to study, keeping the idea of Pomodoro method-->
+                    <div class="choose-time">
+                        <label for="focusTime">Focus (min)</label>
+                        <input type="number" id="focusTime" min="1" max="60" value="25">
+                    </div>
+                    <div class="choose-time">
+                        <label for="breakTime">Break (min)</label>
+                        <input type="number" id="breakTime" min="1" max="30" value="5">
+                    </div>
                 </div>
-                <div class="choose-time">
-                    <label for="breakTime">Break (min)</label>
-                    <input type="number" id="breakTime" min="1" max="30" value="5">
-                </div>
-            </div>
+            </form>
         </div>
     </main>
 

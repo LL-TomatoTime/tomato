@@ -12,7 +12,7 @@ let isRunning = false;
 let isBreak = false;
 let pomodoroDuration = 25;
 let breakDuration = 25;
-let cycles = 0
+let cycles = 0;
 
 const timerDisplay = document.getElementById('timer');
 const startBtn = document.getElementById('start');
