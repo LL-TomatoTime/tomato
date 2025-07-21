@@ -9,9 +9,23 @@ rail.addEventListener('click', ()=>{
 let timerDisplay = document.getElementById('timer'); //DOM for display
 let startBnt = document.getElementById('start'); //DOM for start Button
 
-let timeLeft = 25 * 60; //convert 25 into seconds, for the counter decrease second per second on the display
+let timeLeft = 1 * 6; //convert 25 into seconds, for the counter decrease second per second on the display
+
+let timerInterval = null;
 
 function startTimer() {
+
+    if (timerInterval !== null) {
+        return;
+    }
+
+    timerInterval = setInterval (() => {
+        if(timeLeft <= 0){
+            clearInterval;
+            timerInterval = null;
+            return;
+        }
+    })
     const timeSetInterval = setInterval(() => {
 
         if(timeLeft <= 0){
