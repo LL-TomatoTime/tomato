@@ -8,6 +8,7 @@ rail.addEventListener('click', ()=>{
 
 let timerDisplay = document.getElementById('timer'); //DOM for display
 let startBnt = document.getElementById('start'); //DOM for start Button
+const alarmSound = document.getElementById('alarm-sound'); //DOM for alarm
 
 let timeLeft = 25 * 60; //convert 25 into seconds, for the counter decrease second per second on the display
 let timerInterval = null;
@@ -21,6 +22,7 @@ function startTimer() {
             clearInterval(timerInterval); //Clears SetInterval ID
             timerInterval = null; // Leave it as null so it can be used again
             alert('The time is up!!');
+            alarmSound.play();
             return;
         }
 
