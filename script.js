@@ -12,9 +12,12 @@ let pauseBtn = document.querySelector('#pause');
 let resetBtn = document.querySelector('#reset');
 const alarmSound = document.getElementById('alarm-sound'); //DOM for alarm
 
-let originalTime = 25 * 60;//convert 25 into seconds, for the counter decrease second per second on the display
+let breaktime = 1 * 4;
+let focustime  
+let originalTime = 1 * 2;//convert 25 into seconds, for the counter decrease second per second on the display
 let timeLeft = originalTime;
 let timerInterval = null;
+let currentmode = 'focus';
 
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);  //convert seconds into minutes, for decrease the minutes on the display
@@ -30,14 +33,37 @@ function startTimer() {
         if(timeLeft <= 0){ //Check if the timer has reached 0
             clearInterval(timerInterval); //Clears SetInterval ID
             timerInterval = null; // Leave it as null so it can be used again
-            alarmSound.play();
             alert('The time is up!!');
+            switchMode();
             return;
         }
 
         timeLeft--;
        updateDisplay();
     }, 1000); //I don't know why I would have to use milliseconds instead of just seconds, but I saw this in the w3school documentation, please explain this to me
+}
+
+function switchMode() {
+    alarmSound.play();
+
+    // if (currentmode === 'focus') {
+    //     currentmode = 'break';
+    //     originalTime = breaktime; 
+    //     alert("Break time is over!");
+    // }
+    // } else {
+    //     currentmode = 'focus';
+    //     focustime = originalTime; 
+    //     alert("Break over!");
+    // }
+
+    originalTime = breaktime
+    alert('Break Times Is over!');
+
+    updateDisplay();
+    timeLeft;
+    startTimer(); 
+    return;
 }
 
 function pauseTimer(){
