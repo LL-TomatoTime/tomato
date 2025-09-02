@@ -296,3 +296,9 @@ input:focus {
         gap: 20px;
     }
 }
+
+.mode-btn.active {
+  background-color: #ff6347; /* Cor de tomate para o botão ativo */
+  color: white;
+}
+
