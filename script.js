@@ -45,7 +45,6 @@ function updateCounterDisplay() {
 function startTimer() {
     if (timerInterval !== null) return;
 
-
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) { //Check if the timer has reached 0
             clearInterval(timerInterval); //Clears SetInterval ID
