@@ -19,8 +19,6 @@ const pomodoroCounterDisplay = document.getElementById('pomodoro-counter');
 const long_break = 15 * 60;
 const pomodoro_until_break = 4;
 const trophyContainer = document.getElementById('trophy-container');
-
-
 let timeLeft;
 let timerInterval = null;
 let currentmode = 'focus';
@@ -47,11 +45,6 @@ function updateCounterDisplay() {
 function startTimer() {
     if (timerInterval !== null) return;
 
-    if (currentmode === 'focus') {
-        timeLeft = focusTimeInput.value * 60;
-    } else {
-        timeLeft = breakTimeInput.value * 60;
-    }
 
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) { //Check if the timer has reached 0
@@ -72,7 +65,6 @@ function switchMode() {
     if (currentmode === 'focus') {
         pomodoroCount++;
         updateCounterDisplay();
-
         if (pomodoroCount % pomodoro_until_break === 0) {
             setMode('break', long_break);
         } else {
@@ -120,7 +112,6 @@ focusBtn.addEventListener('click', () => {
     const focusTime = focusTimeInput.value * 60;
     setMode('focus', focusTime);
 });
-S
 breakBtn.addEventListener('click', () => {
     const breakTime = breakTimeInput.value * 60;
     setMode('break', breakTime);
