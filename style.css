@@ -7,6 +7,32 @@
     --text-color: #ffffffcc;
     --text-color-light: #f1f1f1;
     --white-translucent: #ffffffcc;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --border-color: rbga(255, 255, 255, 0.2);
+    --white: #fff;
+    --black: #000000;
+    --red: #ff0000;
+    --heading-color: rgb(77, 0, 0);
+    --component-bg: rgba(0, 0, 0, 0.1);
+    --input-focus-bg: rgba(0, 0, 0, 0.2);
+    --hover-shadow-color: rgba(0, 0, 0, 0.15);
+    --active-state-bg: #ff6347;
+}
+
+.dark{
+--white: #2e2e2e;
+--black: #ffffff;
+--text-color: #5a5a5acc;
+--text-color-light: #0e0e0e;
+--heading-color: #b71c1c;
+--light-bg: rgba(0, 0, 0, 0.05);
+--component-bg: rgba(0, 0, 0, 0.1);
+--input-focus-bg: rgba(0, 0, 0, 0.15);
+--accent-color: #d32f2f;
+--active-state-bg: #c62828;
+--border-color: rgba(0, 0, 0, 0.1);
+--shadow-color: rgba(0, 0, 0, 0.15);
+--hover-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 *{
@@ -17,7 +43,7 @@
 }
 
 body{
-    background: black;
+    background: var(--black);
     transition: .8s;
 }
 
@@ -40,7 +66,7 @@ main{
 
 .header h1 {
     font-weight: 700;
-    color: rgb(77, 0, 0);
+    color: var(--heading-color);
 }
 
 .header > p{
@@ -53,8 +79,8 @@ main{
     max-width: 650px;
     text-align: center;
     background: var(--light-bg);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px var(--shadow-color);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 40px;
     backdrop-filter: blur(10px);
@@ -73,51 +99,27 @@ main{
 .rail { 
     width: 60px;
     height: 30px;
-    background-color: #ffffff;
-    border-radius: 150px;
+    background-color: var(--white);
+    border-radius: 15px;
     position: relative;
     cursor: pointer;
+    
 }
 
 .rail .indicator {
-    width: 30px;
-    height: 30px;
-    background-color: red;
+    width: 26px;
+    height: 26px;
+    background-color: var(--red);
     border-radius: 50%;
-    transform: scale(.8);
     position: absolute;
-    left: 0;
-    transition: .8s;
-}
-
-.rail.dark {
-    background-color: #000000;
+    left: 2px;
+    transform: translateY(-50%);
+    top: 50%;
+    transition: all 0.4s ease-in-out;
 }
 
 .rail.dark .indicator {
-    left: 30px;
-    background-color: #ffff;
-}
-
-body.dark {
-    background: #ffffff;
-}
-
-body.dark .time-display {
-    color: black;
-}
-
-body.dark p {
-    color: black;
-}
-
-body.dark label {
-    color: black;
-}
-
-body.dark .controls button:first-child  {
-    color: rgb(255, 255, 255);
-    background-color: black;
+    left: 32px;
 }
 
 .modes {
@@ -125,7 +127,7 @@ body.dark .controls button:first-child  {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--component-bg);
     border-radius: 100px;
     padding: 5px;
 }
@@ -172,13 +174,13 @@ body.dark .controls button:first-child  {
 }
 
 .controls button:not(:first-child) {
-    background: red;
+    background: var(--red);
     color: var(--text-color-light);
 }
 
 .controls button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px var(--hover-shadow-color);
 }
 
 /* button{
@@ -194,7 +196,7 @@ body.dark .controls button:first-child  {
     gap: 50px;
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--border-color);
 }
 
 .choose-time{
@@ -218,14 +220,14 @@ input{
     font-size: 16px;
     font-weight: 600;
     border: 2px solid transparent;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--component-bg);
     color: var(--text-color);
     transition: all 0.3s ease;
 }
 input:focus {
     outline: none;
     border-color: var(--white-translucent);
-    background-color: rgba(0, 0, 0, 0,2);
+    background-color: var(--input-focus-bg);
 }
 .timer-display {
     position: relative; 
@@ -298,6 +300,6 @@ input:focus {
 }
 
 .mode-btn.active {
-  background-color: #ff6347;
-  color: white;
+  background-color: var(--active-state-bg);
+  color: var(--white);
 }
