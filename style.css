@@ -298,7 +298,6 @@ input:focus {
 }
 
 .mode-btn.active {
-  background-color: #ff6347; /* Cor de tomate para o botão ativo */
+  background-color: #ff6347;
   color: white;
 }
-
